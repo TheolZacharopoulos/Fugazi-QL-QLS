@@ -1,8 +1,3 @@
 # many-ql
-Many QL/QLS implementations of the year 2014-2015
-
-### Need commit-message inspiration?
-[What The Commit .com](http://whatthecommit.com/)
-
-### Need an excuse?
-[Programming Excuses .com](http://programmingexcuses.com/)
+This is a fork of the UvA Software Engineering, Software Construction course
+[many-ql 2014-2015](https://github.com/software-engineering-amsterdam/many-ql)
