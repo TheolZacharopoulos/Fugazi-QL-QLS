@@ -13,6 +13,7 @@ import org.fugazi.ql.type_checker.issue.ASTNodeIssue;
 import org.fugazi.ql.type_checker.issue.error.DuplicateQuestionError;
 import org.fugazi.ql.type_checker.issue.error.NonBoolConditionError;
 import org.fugazi.ql.type_checker.issue.error.TypeMismatchError;
+import org.fugazi.ql.type_checker.issue.warning.DuplicateLabelWarning;
 import org.fugazi.ql.type_checker.visitor.CyclicDependenciesVisitor;
 import org.fugazi.ql.type_checker.visitor.TypeMismatchVisitor;
 import org.fugazi.ql.type_checker.visitor.UndefinedQuestionsVisitor;
@@ -58,8 +59,9 @@ public class QLTypeChecker {
             String label = question.getLabel();
 
             if (labels.contains(label)) {
-                this.astIssueHandler.registerNewWarning(question,
-                        "Label defined multiple times! Possible confusion."
+                this.astIssueHandler.registerNewWarning(
+                        new DuplicateLabelWarning(),
+                        question, "Label defined multiple times! Possible confusion."
                 );
             } else {
                 labels.add(label);

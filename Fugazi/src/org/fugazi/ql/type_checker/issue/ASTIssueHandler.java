@@ -1,7 +1,6 @@
 package org.fugazi.ql.type_checker.issue;
 
 import org.fugazi.ql.ast.AbstractASTNode;
-import org.fugazi.ql.type_checker.issue.warning.DuplicateLabelWarning;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +50,9 @@ public class ASTIssueHandler {
         ));
     }
 
-    public void registerNewWarning(AbstractASTNode _errorNode, String _message) {
+    public void registerNewWarning(ASTNodeIssueType _type, AbstractASTNode _errorNode, String _message) {
         this.warnings.add(new ASTNodeIssue(
-                new DuplicateLabelWarning(), _errorNode, _message
+                _type, _errorNode, _message
         ));
     }
 
