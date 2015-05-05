@@ -18,22 +18,11 @@ public class GUIEvaluator {
         this.evaluator = new Evaluator(valueStorage);
     }
 
-    private ExpressionValue evaluateComputedQuestion(ComputedQuestion _computedQuest) {
+    private ExpressionValue evaluateExpression(ComputedQuestion _computedQuest) {
         Expression expression = _computedQuest.getComputedExpression();
         return evaluator.evaluateExpression(expression);
     }
 
-    public ExpressionValue evaluateComputedExpression(ComputedQuestion _computedQuest) {
-        ExpressionValue result = this.evaluateComputedQuestion(_computedQuest);
-        valueStorage.saveValue(_computedQuest.getIdName(), result);
-        return result;
-    }
-
-    public boolean evaluateIfStatement(IfStatement _ifStatement) {
-        Expression condition = _ifStatement.getCondition();
-        return this.getConditionResult(condition);
-    }
-    
     private boolean getConditionResult(Expression _condition) {
         ExpressionValue expressionValue = this.evaluator.evaluateExpression(_condition);
         BoolValue result;
@@ -43,5 +32,16 @@ public class GUIEvaluator {
             result = new BoolValue(false);
         }
         return result.getValue();
+    }
+
+    public ExpressionValue evaluateComputedQuestion(ComputedQuestion _computedQuest) {
+        ExpressionValue result = this.evaluateExpression(_computedQuest);
+        valueStorage.saveValue(_computedQuest.getIdName(), result);
+        return result;
+    }
+
+    public boolean evaluateIfStatement(IfStatement _ifStatement) {
+        Expression condition = _ifStatement.getCondition();
+        return this.getConditionResult(condition);
     }
 }

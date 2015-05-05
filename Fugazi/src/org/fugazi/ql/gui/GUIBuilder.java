@@ -109,7 +109,7 @@ public class GUIBuilder implements IMediator {
     }
     
     protected void updateComputedQuestion(ComputedQuestion _computedQuestion) {
-        ExpressionValue result = this.guiEvaluator.evaluateComputedExpression(_computedQuestion);
+        ExpressionValue result = this.guiEvaluator.evaluateComputedQuestion(_computedQuestion);
         UIComputedQuestion uiComputedQuestion = (UIComputedQuestion) this.getUIQuestionById(
                                                                         _computedQuestion.getIdName(),
                                                                         this.questionsWithConditions);

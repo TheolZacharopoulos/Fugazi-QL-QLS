@@ -39,7 +39,7 @@ public class UIQuestionBuilder implements IStatementVisitor <UIQuestion>{
     }
 
     public UIQuestion visitComputedQuestion(ComputedQuestion _computedQuestion) {
-        ExpressionValue result = guiEvaluator.evaluateComputedExpression(_computedQuestion);
+        ExpressionValue result = guiEvaluator.evaluateComputedQuestion(_computedQuestion);
         IWidget widget = this.widgetsFactory.getWidgetForQuestion(_computedQuestion, result);
         return new UIComputedQuestion(mediator, _computedQuestion, widget, result);
     }
