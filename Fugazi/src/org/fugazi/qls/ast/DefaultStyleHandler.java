@@ -147,7 +147,7 @@ public class DefaultStyleHandler extends FullQLSFormVisitor {
                 this.setWidgetFromDeclaration(_question, _segmentDefaultStyles);
             } else {
                 // else set style to the widget.
-                this.styleQuestionFormDeclarations(_question, _segmentDefaultStyles);
+                this.setStyleAndWidgetToQuestionFormDeclarations(_question, _segmentDefaultStyles);
             }
         }
     }
@@ -204,7 +204,7 @@ public class DefaultStyleHandler extends FullQLSFormVisitor {
         }
     }
     
-    private void styleQuestionFormDeclarations(
+    private void setStyleAndWidgetToQuestionFormDeclarations(
             QLSQuestion _question, List<DefaultStyleDeclaration> _segmentDefaultStyles) 
     {
         boolean isWidgetFoundInDeclaration = false;
