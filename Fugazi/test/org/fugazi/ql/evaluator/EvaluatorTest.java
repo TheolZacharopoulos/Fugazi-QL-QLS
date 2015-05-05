@@ -1,28 +1,27 @@
 package org.fugazi.ql.evaluator;
 
-import org.fugazi.ql.ast.expression.logical.And;
-import org.fugazi.ql.ast.expression.logical.Or;
-import org.fugazi.ql.ast.expression.unary.Negative;
-import org.fugazi.ql.ast.expression.unary.Not;
-import org.fugazi.ql.ast.expression.unary.Positive;
-import org.fugazi.ql.ast.type.IntType;
-import org.fugazi.ql.evaluator.expression_value.ExpressionValue;
-import org.fugazi.ql.evaluator.expression_value.IntValue;
-import org.fugazi.ql.evaluator.expression_value.UndefinedValue;
 import org.fugazi.ql.ast.expression.comparison.*;
 import org.fugazi.ql.ast.expression.literal.BOOL;
 import org.fugazi.ql.ast.expression.literal.ID;
 import org.fugazi.ql.ast.expression.literal.INT;
 import org.fugazi.ql.ast.expression.literal.STRING;
+import org.fugazi.ql.ast.expression.logical.And;
+import org.fugazi.ql.ast.expression.logical.Or;
 import org.fugazi.ql.ast.expression.numerical.Add;
 import org.fugazi.ql.ast.expression.numerical.Div;
 import org.fugazi.ql.ast.expression.numerical.Mul;
 import org.fugazi.ql.ast.expression.numerical.Sub;
+import org.fugazi.ql.ast.expression.unary.Negative;
+import org.fugazi.ql.ast.expression.unary.Not;
+import org.fugazi.ql.ast.expression.unary.Positive;
+import org.fugazi.ql.evaluator.expression_value.ExpressionValue;
+import org.fugazi.ql.evaluator.expression_value.IntValue;
+import org.fugazi.ql.evaluator.expression_value.UndefinedValue;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class EvaluatorTest {
 
@@ -53,14 +52,6 @@ public class EvaluatorTest {
         Add expression = new Add(num5, num4 );
         ExpressionValue value = evaluator.evaluateExpression(expression);
         assertEquals(value.getValue(), 9);
-    }
-
-    @Test
-    public void testAddExpressionWithStrings() throws Exception {
-        // test: Foo + bar = Foobar;
-        Add expression = new Add(stringFoo, stringBar );
-        ExpressionValue value = evaluator.evaluateExpression(expression);
-        assertEquals(value.getValue(), "Foobar");
     }
 
     @Test(expected=AssertionError.class)
