@@ -15,7 +15,7 @@ public class WidgetsFactory implements ITypeVisitor<IWidget> {
         return type.accept(this);
     }
     
-    public IWidget getWidgetForQuestion(Question _question, ExpressionValue _value) {
+    public IWidget getWidgetForComputedQuestion(Question _question, ExpressionValue _value) {
         Type type = _question.getType();
         this.questionLabel = _question.getLabel();
 

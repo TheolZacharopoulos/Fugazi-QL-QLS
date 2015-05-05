@@ -28,7 +28,7 @@ public class QLSWidgetsFactory extends WidgetsFactory {
     }
 
     @Override
-    public IWidget getWidgetForQuestion(Question _question, ExpressionValue _value) {
+    public IWidget getWidgetForComputedQuestion(Question _question, ExpressionValue _value) {
         String label = _question.getLabel();
         AbstractQLSWidget widget = (AbstractQLSWidget) getQlsWidget(_question.getIdName());
         widget.setLabel(label);
