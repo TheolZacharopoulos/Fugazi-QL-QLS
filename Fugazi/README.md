@@ -1,10 +1,5 @@
-UvA - Software Construction 2014-2015
+Fugazi Questionaire Language and Questionaire Language Stylesheet
 =======
-
-## Fugazi Team
-
-- Theologos Zacharopoulos (10850619)
-- Lukasz Harezlak (10630171)
 
 Usage
 ========
@@ -39,7 +34,7 @@ Tools
 
 ## Programming Language
 
-As a programming language we use `Java`, the reason is that both members of the team haven't worked before extensively in this
+As a programming language we use `Java`, the reason is that the project's cotributors haven't worked before extensively in this
 language and since Java is considered as a "broadly-used and "must-know" language we saw this as an opportunity to get our hands dirty for real with Java.
 Also, Java provides numerous of documentation resources in the field of DSLs and a lot of tools for parsing. It is very intuitive as
 an Object oriented language, and is a common ground for object oriented developers.
