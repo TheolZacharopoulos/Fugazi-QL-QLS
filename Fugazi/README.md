@@ -8,6 +8,7 @@ Usage
 
 We use `ant` for build framework, the file `build.xml` describes the build script.
 By executing the following (in the project folder) run a full build of the project including the generation of executable:
+
 ```
 ant all
 ```
@@ -48,7 +49,7 @@ of support and many active online communities.
 
 ## Unit Tests
 
-For the tests we use the JUnit4 framework.
+For the tests we use the *JUnit4 framework*.
 
 ## IDE
 
@@ -57,7 +58,7 @@ before and we feel more comfortable by using it.
 
 ## UI
 
-For the UI we use the Java Swing framework.
+For the UI we use the *Java Swing* framework.
 
 ## External Tools
 
@@ -121,7 +122,7 @@ OR cmd+shift+G*
 **Jetbrains Antlr test:**
 *Inside of a g4 file -> right click on the token you want to test -> Test Rule <token>*
 
-QL & QLS
+QL & QLS DSLs
 =========
 
 #### QL Requirements
