@@ -2,7 +2,6 @@ package org.fugazi.ql.ast.form.form_data.visitor;
 
 import org.fugazi.ql.ast.IASTVisitor;
 import org.fugazi.ql.ast.expression.Expression;
-import org.fugazi.ql.ast.expression.comparison.*;
 import org.fugazi.ql.ast.expression.literal.BOOL;
 import org.fugazi.ql.ast.expression.literal.ID;
 import org.fugazi.ql.ast.expression.literal.INT;
@@ -111,32 +110,32 @@ public abstract class FullQLFormVisitor implements IASTVisitor<Void> {
     }
 
     @Override
-    public Void visitEQ(EQ eq) {
+    public Void visitEQ(org.fugazi.ql.ast.expression.comparison.equality.EQ eq) {
         return null;
     }
 
     @Override
-    public Void visitGE(GE ge) {
+    public Void visitGE(org.fugazi.ql.ast.expression.comparison.ordering.GE ge) {
         return null;
     }
 
     @Override
-    public Void visitGreater(Greater greater) {
+    public Void visitGreater(org.fugazi.ql.ast.expression.comparison.ordering.Greater greater) {
         return null;
     }
 
     @Override
-    public Void visitLE(LE le) {
+    public Void visitLE(org.fugazi.ql.ast.expression.comparison.ordering.LE le) {
         return null;
     }
 
     @Override
-    public Void visitLesser(Less less) {
+    public Void visitLesser(org.fugazi.ql.ast.expression.comparison.ordering.Less less) {
         return null;
     }
 
     @Override
-    public Void visitNotEq(NotEq notEq) {
+    public Void visitNotEq(org.fugazi.ql.ast.expression.comparison.equality.NotEq notEq) {
         return null;
     }
 

@@ -1,6 +1,5 @@
 package org.fugazi.ql.evaluator;
 
-import org.fugazi.ql.ast.expression.comparison.*;
 import org.fugazi.ql.ast.expression.literal.BOOL;
 import org.fugazi.ql.ast.expression.literal.ID;
 import org.fugazi.ql.ast.expression.literal.INT;
@@ -263,12 +262,12 @@ public class EvaluatorTest {
     @Test
     public void testEqualsExpressionWithNums() throws Exception {
         // test: 5 == 4 = false
-        EQ expression1 = new EQ(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression1 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), false);
 
         // test: 5 == 5 = true
-        EQ expression2 = new EQ(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression2 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), true);
     }
@@ -276,12 +275,12 @@ public class EvaluatorTest {
     @Test
     public void testEqualsExpressionWithStrings() throws Exception {
         // test: Foo == bar = false;
-        EQ expression1 = new EQ(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression1 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), false);
 
         // test: Foo == Foo = true;
-        EQ expression2 = new EQ(stringFoo, stringFoo );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression2 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(stringFoo, stringFoo );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), true);
     }
@@ -289,12 +288,12 @@ public class EvaluatorTest {
     @Test
     public void testEqualsExpressionWithBools() throws Exception {
         // test: true == false = false;
-        EQ expression1 = new EQ(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression1 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), false);
 
         // test: true == true = true;
-        EQ expression2 = new EQ(boolTrue, boolTrue );
+        org.fugazi.ql.ast.expression.comparison.equality.EQ expression2 = new org.fugazi.ql.ast.expression.comparison.equality.EQ(boolTrue, boolTrue );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), true);
     }
@@ -305,12 +304,12 @@ public class EvaluatorTest {
     @Test
     public void testNotEqualsExpressionWithNums() throws Exception {
         // test: 5 != 4 = true
-        NotEq expression1 = new NotEq(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression1 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), true);
 
         // test: 5 != 5 = false
-        NotEq expression2 = new NotEq(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression2 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), false);
     }
@@ -318,12 +317,12 @@ public class EvaluatorTest {
     @Test
     public void testNotEqualsExpressionWithStrings() throws Exception {
         // test: Foo != bar = true;
-        NotEq expression1 = new NotEq(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression1 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), true);
 
         // test: Foo != Foo = false;
-        NotEq expression2 = new NotEq(stringFoo, stringFoo );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression2 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(stringFoo, stringFoo );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), false);
     }
@@ -331,12 +330,12 @@ public class EvaluatorTest {
     @Test
     public void testNotEqualsExpressionWithBools() throws Exception {
         // test: true != false = true;
-        NotEq expression1 = new NotEq(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression1 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), true);
 
         // test: true != true = false;
-        NotEq expression2 = new NotEq(boolTrue, boolTrue );
+        org.fugazi.ql.ast.expression.comparison.equality.NotEq expression2 = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(boolTrue, boolTrue );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), false);
     }
@@ -347,17 +346,17 @@ public class EvaluatorTest {
     @Test
     public void testGreaterExpressionWithNums() throws Exception {
         // test: 5 > 4 = true
-        Greater expression1 = new Greater(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Greater expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), true);
 
         // test: 5 > 5 = false
-        Greater expression2 = new Greater(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Greater expression2 = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), false);
 
         // test: 4 > 5 = false
-        Greater expression3 = new Greater(num4, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Greater expression3 = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(num4, num5 );
         ExpressionValue value3 = evaluator.evaluateExpression(expression3);
         assertEquals(value3.getValue(), false);
     }
@@ -365,14 +364,14 @@ public class EvaluatorTest {
     @Test(expected=AssertionError.class)
     public void testGreaterExpressionWithStrings() throws Exception {
         // test: Undefined
-        Greater expression1 = new Greater(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.ordering.Greater expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
     @Test(expected=AssertionError.class)
     public void testGreaterExpressionWithBools() throws Exception {
         // test: Undefined
-        Greater expression1 = new Greater(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.ordering.Greater expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
@@ -382,17 +381,17 @@ public class EvaluatorTest {
     @Test
     public void testLesserExpressionWithNums() throws Exception {
         // test: 5 < 4 = false
-        Less expression1 = new Less(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Less expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Less(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), false);
 
         // test: 5 < 5 = false
-        Less expression2 = new Less(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Less expression2 = new org.fugazi.ql.ast.expression.comparison.ordering.Less(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), false);
 
         // test: 4 < 5 = true
-        Less expression3 = new Less(num4, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.Less expression3 = new org.fugazi.ql.ast.expression.comparison.ordering.Less(num4, num5 );
         ExpressionValue value3 = evaluator.evaluateExpression(expression3);
         assertEquals(value3.getValue(), true);
     }
@@ -400,14 +399,14 @@ public class EvaluatorTest {
     @Test(expected=AssertionError.class)
     public void testLesserExpressionWithStrings() throws Exception {
         // test: Undefined
-        Less expression1 = new Less(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.ordering.Less expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Less(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
     @Test(expected=AssertionError.class)
     public void testLesserExpressionWithBools() throws Exception {
         // test: Undefined
-        Less expression1 = new Less(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.ordering.Less expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.Less(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         Assert.assertEquals(value1.getValue(), new UndefinedValue().getValue());
     }
@@ -418,17 +417,17 @@ public class EvaluatorTest {
     @Test
     public void testGreaterEqualExpressionWithNums() throws Exception {
         // test: 5 >= 4 = true
-        GE expression1 = new GE(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.ordering.GE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.GE(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), true);
 
         // test: 5 >= 5 = true
-        GE expression2 = new GE(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.GE expression2 = new org.fugazi.ql.ast.expression.comparison.ordering.GE(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), true);
 
         // test: 4 >= 5 = false
-        GE expression3 = new GE(num4, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.GE expression3 = new org.fugazi.ql.ast.expression.comparison.ordering.GE(num4, num5 );
         ExpressionValue value3 = evaluator.evaluateExpression(expression3);
         assertEquals(value3.getValue(), false);
     }
@@ -436,14 +435,14 @@ public class EvaluatorTest {
     @Test(expected=AssertionError.class)
     public void testGreaterEqualExpressionWithStrings() throws Exception {
         // test: Undefined
-        GE expression1 = new GE(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.ordering.GE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.GE(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
     @Test(expected=AssertionError.class)
     public void testGreaterEqualExpressionWithBools() throws Exception {
         // test: Undefined
-        GE expression1 = new GE(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.ordering.GE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.GE(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
@@ -453,17 +452,17 @@ public class EvaluatorTest {
     @Test
     public void testLessEqualExpressionWithNums() throws Exception {
         // test: 5 <= 4 = false
-        LE expression1 = new LE(num5, num4 );
+        org.fugazi.ql.ast.expression.comparison.ordering.LE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.LE(num5, num4 );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
         assertEquals(value1.getValue(), false);
 
         // test: 5 <= 5 = true
-        LE expression2 = new LE(num5, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.LE expression2 = new org.fugazi.ql.ast.expression.comparison.ordering.LE(num5, num5 );
         ExpressionValue value2 = evaluator.evaluateExpression(expression2);
         assertEquals(value2.getValue(), true);
 
         // test: 4 <= 5 = true
-        LE expression3 = new LE(num4, num5 );
+        org.fugazi.ql.ast.expression.comparison.ordering.LE expression3 = new org.fugazi.ql.ast.expression.comparison.ordering.LE(num4, num5 );
         ExpressionValue value3 = evaluator.evaluateExpression(expression3);
         assertEquals(value3.getValue(), true);
     }
@@ -471,14 +470,14 @@ public class EvaluatorTest {
     @Test(expected=AssertionError.class)
     public void testLessEqualExpressionWithStrings() throws Exception {
         // test: Undefined
-        LE expression1 = new LE(stringFoo, stringBar );
+        org.fugazi.ql.ast.expression.comparison.ordering.LE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.LE(stringFoo, stringBar );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 
     @Test(expected=AssertionError.class)
     public void testLessEqualExpressionWithBools() throws Exception {
         // test: Undefined
-        LE expression1 = new LE(boolTrue, boolFalse );
+        org.fugazi.ql.ast.expression.comparison.ordering.LE expression1 = new org.fugazi.ql.ast.expression.comparison.ordering.LE(boolTrue, boolFalse );
         ExpressionValue value1 = evaluator.evaluateExpression(expression1);
     }
 }

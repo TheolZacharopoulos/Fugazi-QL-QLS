@@ -1,6 +1,5 @@
 package org.fugazi.ql.ast.expression;
 
-import org.fugazi.ql.ast.expression.comparison.*;
 import org.fugazi.ql.ast.expression.literal.BOOL;
 import org.fugazi.ql.ast.expression.literal.ID;
 import org.fugazi.ql.ast.expression.literal.INT;
@@ -27,12 +26,12 @@ public interface IExpressionVisitor<T> {
     public T visitPositive(Positive _positive);
 
     // Comparison
-    public T visitEQ(EQ _eq);
-    public T visitGE(GE _ge);
-    public T visitGreater(Greater _greater);
-    public T visitLE(LE _le);
-    public T visitLesser(Less _less);
-    public T visitNotEq(NotEq _notEq);
+    public T visitEQ(org.fugazi.ql.ast.expression.comparison.equality.EQ _eq);
+    public T visitGE(org.fugazi.ql.ast.expression.comparison.ordering.GE _ge);
+    public T visitGreater(org.fugazi.ql.ast.expression.comparison.ordering.Greater _greater);
+    public T visitLE(org.fugazi.ql.ast.expression.comparison.ordering.LE _le);
+    public T visitLesser(org.fugazi.ql.ast.expression.comparison.ordering.Less _less);
+    public T visitNotEq(org.fugazi.ql.ast.expression.comparison.equality.NotEq _notEq);
 
     // Numerical
     public T visitAdd(Add _add);

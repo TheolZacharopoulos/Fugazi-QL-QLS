@@ -245,37 +245,37 @@ public class FugaziQLVisitor extends QLBaseVisitor<AbstractASTNode> {
         Expression rightExpr = (Expression) ctx.expression().get(1).accept(this);
 
         if (ctx.op.getText().equals(">")) {
-            Greater expression = new Greater(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.ordering.Greater expression = new org.fugazi.ql.ast.expression.comparison.ordering.Greater(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }
 
         if (ctx.op.getText().equals(">=")) {
-            GE expression = new GE(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.ordering.GE expression = new org.fugazi.ql.ast.expression.comparison.ordering.GE(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }
 
         if (ctx.op.getText().equals("<")) {
-            Less expression = new Less(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.ordering.Less expression = new org.fugazi.ql.ast.expression.comparison.ordering.Less(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }
 
         if (ctx.op.getText().equals("<=")) {
-            LE expression = new LE(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.ordering.LE expression = new org.fugazi.ql.ast.expression.comparison.ordering.LE(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }
 
         if (ctx.op.getText().equals("==")) {
-            EQ expression = new EQ(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.equality.EQ expression = new org.fugazi.ql.ast.expression.comparison.equality.EQ(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }
 
         if (ctx.op.getText().equals("!=")) {
-            NotEq expression = new NotEq(leftExpr, rightExpr);
+            org.fugazi.ql.ast.expression.comparison.equality.NotEq expression = new org.fugazi.ql.ast.expression.comparison.equality.NotEq(leftExpr, rightExpr);
             expression.setLineNumber(this.getLineNumber(ctx));
             return expression;
         }

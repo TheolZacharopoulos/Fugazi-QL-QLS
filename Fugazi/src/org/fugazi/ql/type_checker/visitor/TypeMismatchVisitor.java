@@ -136,32 +136,32 @@ public class TypeMismatchVisitor extends FullQLFormVisitor {
     }
 
     @Override
-    public Void visitEQ(EQ eq) {
+    public Void visitEQ(org.fugazi.ql.ast.expression.comparison.equality.EQ eq) {
         return this.visitBinaryComparison(eq, eq.getSupportedTypes());
     }
 
     @Override
-    public Void visitGE(GE ge) {
+    public Void visitGE(org.fugazi.ql.ast.expression.comparison.ordering.GE ge) {
         return this.visitBinaryComparison(ge, ge.getSupportedTypes());
     }
 
     @Override
-    public Void visitGreater(Greater greater) {
+    public Void visitGreater(org.fugazi.ql.ast.expression.comparison.ordering.Greater greater) {
         return this.visitBinaryComparison(greater, greater.getSupportedTypes());
     }
 
     @Override
-    public Void visitLE(LE le) {
+    public Void visitLE(org.fugazi.ql.ast.expression.comparison.ordering.LE le) {
         return this.visitBinaryComparison(le, le.getSupportedTypes());
     }
 
     @Override
-    public Void visitLesser(Less less) {
+    public Void visitLesser(org.fugazi.ql.ast.expression.comparison.ordering.Less less) {
         return this.visitBinaryComparison(less, less.getSupportedTypes());
     }
 
     @Override
-    public Void visitNotEq(NotEq notEq) {
+    public Void visitNotEq(org.fugazi.ql.ast.expression.comparison.equality.NotEq notEq) {
         return this.visitBinaryComparison(notEq, notEq.getSupportedTypes());
     }
 

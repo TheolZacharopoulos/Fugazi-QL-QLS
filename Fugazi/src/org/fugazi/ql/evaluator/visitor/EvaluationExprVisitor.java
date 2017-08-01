@@ -1,7 +1,6 @@
 package org.fugazi.ql.evaluator.visitor;
 
 import org.fugazi.ql.ast.expression.IExpressionVisitor;
-import org.fugazi.ql.ast.expression.comparison.*;
 import org.fugazi.ql.ast.expression.literal.BOOL;
 import org.fugazi.ql.ast.expression.literal.ID;
 import org.fugazi.ql.ast.expression.literal.INT;
@@ -67,42 +66,42 @@ public class EvaluationExprVisitor implements IExpressionVisitor <ExpressionValu
     /**
      * Comparison
      */
-    public ExpressionValue visitEQ(EQ _eq) {
+    public ExpressionValue visitEQ(org.fugazi.ql.ast.expression.comparison.equality.EQ _eq) {
         ExpressionValue left = _eq.getLeft().accept(this);
         ExpressionValue right = _eq.getRight().accept(this);
 
         return left.equal(right);
     }
 
-    public ExpressionValue visitNotEq(NotEq _notEq) {
+    public ExpressionValue visitNotEq(org.fugazi.ql.ast.expression.comparison.equality.NotEq _notEq) {
         ExpressionValue left = _notEq.getLeft().accept(this);
         ExpressionValue right = _notEq.getRight().accept(this);
 
         return left.notEqual(right);
     }
 
-    public ExpressionValue visitGreater(Greater _greater) {
+    public ExpressionValue visitGreater(org.fugazi.ql.ast.expression.comparison.ordering.Greater _greater) {
         ExpressionValue left = _greater.getLeft().accept(this);
         ExpressionValue right = _greater.getRight().accept(this);
 
         return left.greater(right);
     }
 
-    public ExpressionValue visitLesser(Less _less) {
+    public ExpressionValue visitLesser(org.fugazi.ql.ast.expression.comparison.ordering.Less _less) {
         ExpressionValue left = _less.getLeft().accept(this);
         ExpressionValue right = _less.getRight().accept(this);
 
         return left.less(right);
     }
     
-    public ExpressionValue visitGE(GE _ge) {
+    public ExpressionValue visitGE(org.fugazi.ql.ast.expression.comparison.ordering.GE _ge) {
         ExpressionValue left = _ge.getLeft().accept(this);
         ExpressionValue right = _ge.getRight().accept(this);
 
         return left.greaterEqual(right);
     }   
 
-    public ExpressionValue visitLE(LE _le) {
+    public ExpressionValue visitLE(org.fugazi.ql.ast.expression.comparison.ordering.LE _le) {
         ExpressionValue left = _le.getLeft().accept(this);
         ExpressionValue right = _le.getRight().accept(this);
 
