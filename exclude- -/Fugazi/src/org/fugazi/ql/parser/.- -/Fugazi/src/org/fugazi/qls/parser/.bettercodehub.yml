@@ -1,0 +1,6 @@
+exclude:
+- /Fugazi/src/org/fugazi/ql/parser/.*
+- /Fugazi/src/org/fugazi/qls/parser/.*
+component_depth: 2
+languages:
+- java
